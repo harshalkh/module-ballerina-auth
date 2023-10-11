@@ -39,5 +39,9 @@ jobs:
       run: |
        cd examples
        bal run banking-accounts-service&
+    - name: Sleep for 30 seconds
+      uses: jakejarvis/wait-action@master
+      with:
+        time: '30s'
     - name: Test Api
       run: curl -k -v 'https://localhost:9090/account/def1'
