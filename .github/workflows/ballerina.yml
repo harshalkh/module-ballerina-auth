@@ -30,6 +30,11 @@ jobs:
     - name: Unzip
       run: unzip ballerina-2201.8.1-swan-lake.zip
     - name: Path
-      run: echo $PATH
+      run: |
+       echo $PATH
+       echo $GITHUB_PATH
+       echo "/home/runner/work/module-ballerina-auth/module-ballerina-auth/ballerina-2201.8.1-swan-lake/bin" >> $GITHUB_PATH
+       echo $PATH
+       echo $GITHUB_PATH
     - name: Check Ballerina
       run: bal version 
