@@ -40,5 +40,4 @@ jobs:
        cd examples
        bal run banking-accounts-service&
     - name: Test Api
-      run: |
-       curl -v http://localhost:9090/account
+      run: curl --location --request GET 'http://localhost:9090/account'
