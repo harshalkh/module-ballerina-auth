@@ -38,7 +38,7 @@ jobs:
     - name: Run Ballerina
       run: |
        cd examples
-       bal run banking-accounts-service&>logs.txt
+       bal run banking-accounts-service & >logs.txt &
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
