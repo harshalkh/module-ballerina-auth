@@ -38,10 +38,12 @@ jobs:
     - name: Run Ballerina
       run: |
        cd examples
-       bal run banking-accounts-service&
+       bal run banking-accounts-service&>logs.txt
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
         time: '30s'
+    - name: Logs
+      run: tail -10 logs.txt
     - name: Test Api
-      run: curl -k -v 'https://localhost:9090/account/def1'
+      run: curl -k -v 'http://localhost:9090/account/def1'
