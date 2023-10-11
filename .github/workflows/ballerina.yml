@@ -29,5 +29,7 @@ jobs:
       run: pwd
     - name: List
       run: ls
+    - name: Path
+      run: echo $PATH
     - name: Check Ballerina
       run: bal version 
