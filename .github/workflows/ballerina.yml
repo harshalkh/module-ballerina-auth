@@ -47,10 +47,10 @@ jobs:
       run: tail -10 /home/runner/work/logs.txt
     - name: Test Api
       run: |
-       curl -k 'http://localhost:9090/account/00001234'
-       curl -k -H "Authorization: Basic ZXZlOmV2ZUAxMjM=" "http://localhost:9090/account/00001234"
-       curl -k -H "Authorization: Basic Ym9iOmJvYkAxMjM=" "http://localhost:9090/account/00001234"
-       curl -k -H "Authorization: Basic YWxpY2U6YWxpY2VAMTIz" 'http://localhost:9090/account/00001234'
+       curl -k -v 'http://localhost:9090/account/P1234'
+       curl -k -v -H "Authorization: Basic ZXZlOmV2ZUAxMjM=" "http://localhost:9090/account/P1234"
+       curl -k -v -H "Authorization: Basic Ym9iOmJvYkAxMjM=" "http://localhost:9090/account/P1234"
+       curl -k -v -H "Authorization: Basic YWxpY2U6YWxpY2VAMTIz" 'http://localhost:9090/account/P1234'
     - name: Logs
       run: tail -10 /home/runner/work/logs.txt
       
