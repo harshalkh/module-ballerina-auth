@@ -41,4 +41,4 @@ jobs:
        bal run banking-accounts-service&
     - name: Test Api
       run: |
-       curl http://localhost:9090/account/abc
+       curl -v http://localhost:9090/account
