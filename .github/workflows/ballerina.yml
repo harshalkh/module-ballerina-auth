@@ -37,8 +37,8 @@ jobs:
       run: bal version 
     - name: Run Ballerina
       run: |
-       cd examples/banking-accounts-service
-       bal run api_gateway.bal&
+       cd examples
+       bal run banking-accounts-service&
     - name: Test Api
       run: |
        curl http://localhost:9090/account/abc
