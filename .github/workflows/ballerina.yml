@@ -32,9 +32,13 @@ jobs:
     - name: Path
       run: |
        echo $PATH
-       echo $GITHUB_PATH
        echo "/home/runner/work/module-ballerina-auth/module-ballerina-auth/ballerina-2201.8.1-swan-lake/bin" >> $GITHUB_PATH
-       echo $PATH
-       echo $GITHUB_PATH
     - name: Check Ballerina
       run: bal version 
+    - name: Run Ballerina
+      run: |
+       cd examples/banking-accounts-service
+       bal run api_gateway.bal&
+    - name: Test Api
+      run: |
+       curl http://localhost:9090/account/abc
