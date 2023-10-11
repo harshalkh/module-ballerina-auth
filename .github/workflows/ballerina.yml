@@ -24,6 +24,8 @@ jobs:
         java-version: '11'
         distribution: 'temurin'
     - name: Install Ballerina
-      run: brew install bal
+      run: curl https://dist.ballerina.io/downloads/2201.8.1/ballerina-2201.8.1-swan-lake.zip
+    - name: pwd
+      run: pwd
     - name: Check Ballerina
       run: bal version 
