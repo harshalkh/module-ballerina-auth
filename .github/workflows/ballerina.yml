@@ -52,6 +52,7 @@ jobs:
        curl -k -v -H "Authorization: Basic Ym9iOmJvYkAxMjM=" "http://localhost:9090/account/P1234"
        curl -k -v -H "Authorization: Basic YWxpY2U6YWxpY2VAMTIz" 'http://localhost:9090/account/P1234'
        curl -k -v 'http://localhost:9090/hello'
+       curl -k -v 'http://localhost:9090/foo'
     - name: Logs
       run: tail -10 /home/runner/work/logs.txt
       
