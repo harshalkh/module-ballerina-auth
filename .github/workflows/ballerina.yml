@@ -37,8 +37,9 @@ jobs:
       run: bal version 
     - name: Run Ballerina
       run: |
-       cd examples
-       bal run banking-accounts-service
+       cd examples/banking-accounts-service
+       ls -ltr
+       bal run api_gateway.bal
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
