@@ -38,13 +38,13 @@ jobs:
     - name: Run Ballerina
       run: |
        cd examples
-       bal run banking-accounts-service
+       bal test banking-accounts-service
+       cd banking-accounts-service
+       bal test
     - name: Sleep for 30 seconds
       uses: jakejarvis/wait-action@master
       with:
         time: '30s'
-    - name: Logs
-      run: tail -10 /home/runner/work/logs.txt
     - name: Test Api
       run: |
        curl -k -v 'https://localhost:9090/accounts/account' --cacert="/home/runner/work/module-ballerina-auth/examples/banking-accounts-service/resources/public.crt"
