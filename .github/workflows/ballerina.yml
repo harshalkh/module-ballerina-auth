@@ -34,7 +34,9 @@ jobs:
        echo $PATH
        echo "/home/runner/work/module-ballerina-auth/module-ballerina-auth/ballerina-2201.8.1-swan-lake/bin" >> $GITHUB_PATH
     - name: Check Ballerina
-      run: bal version 
+      run: |
+       bal version 
+       cat /home/runner/work/module-ballerina-auth/module-ballerina-auth/examples/banking-accounts-service/resources/private.key
     - name: Run Ballerina
       run: |
        cd examples
