@@ -47,7 +47,7 @@ jobs:
       run: tail -10 /home/runner/work/logs.txt
     - name: Test Api
       run: |
-       curl -k -v 'http://localhost:9090/accounts/account'
+       curl 'https://localhost:9090/accounts/account' --cacert=
        curl -k -v -H "Authorization: Basic YWxpY2U6YWxpY2VAMTIz" 'http://localhost:9090/accounts/account'
        curl -k -v 'http://localhost:9090/hello'
        curl -k -v 'http://localhost:9090/foo/bar'
