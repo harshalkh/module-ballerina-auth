@@ -29,30 +29,16 @@ jobs:
       run: pwd
     - name: Unzip
       run: unzip ballerina-2201.8.1-swan-lake.zip
-    - name: Path
+    - name: Set Ballerina in Path
       run: |
        echo $PATH
        echo "/home/runner/work/module-ballerina-auth/module-ballerina-auth/ballerina-2201.8.1-swan-lake/bin" >> $GITHUB_PATH
-    - name: Check Ballerina
+    - name: Check Ballerina Version
       run: |
-       bal version 
-       cat /home/runner/work/module-ballerina-auth/module-ballerina-auth/examples/banking-accounts-service/resources/private.key
-    - name: Run Ballerina
+       bal version
+    - name: Run Ballerina Tests
       run: |
        cd examples
        bal test banking-accounts-service
-       cd banking-accounts-service
-       bal test
-    - name: Sleep for 30 seconds
-      uses: jakejarvis/wait-action@master
-      with:
-        time: '30s'
-    - name: Test Api
-      run: |
-       curl -k -v 'https://localhost:9090/accounts/account' --cacert="/home/runner/work/module-ballerina-auth/examples/banking-accounts-service/resources/public.crt"
-       curl -k -v -H "Authorization: Basic YWxpY2U6YWxpY2VAMTIz" 'https://localhost:9090/accounts/account'
-       curl -k -v 'https://localhost:9090/hello'
-       curl -k -v 'https://localhost:9090/foo/bar'
-    - name: Logs
-      run: tail -10 /home/runner/work/logs.txt
+       cat ./banking-accounts-service/resources/private.key
       
