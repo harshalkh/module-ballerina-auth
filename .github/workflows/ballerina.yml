@@ -40,5 +40,4 @@ jobs:
       run: |
        cd examples
        bal test banking-accounts-service
-       cat ./banking-accounts-service/resources/private.key
       
