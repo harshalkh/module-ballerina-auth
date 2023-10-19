@@ -38,6 +38,6 @@ jobs:
        bal version
     - name: Run Ballerina Tests
       run: |
-       cd examples
-       bal test banking-accounts-service
+       cd examples/banking-accounts-service
+       bal test
       
